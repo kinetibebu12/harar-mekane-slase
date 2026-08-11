@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harar Mekane Selassie Cathedral | ሐረር መካነ ሥላሴ ካቴድራል</title>
+    <style>
+        /* CSS Variables - Light Yellow Theme */
+        :root {
+            --bg-color: #FFFDF0;          /* Soft Light Yellow */
+            --surface-bg: #FFF9D6;       /* Slightly deeper yellow tone */
+            --card-bg: #FFFFFF;          /* Pure White for cards */
+            --text-color: #2C2512;       /* Dark warm brown text */
+            --text-muted: #665A3C;       /* Soft muted text */
+            --primary-gold: #D4AF37;     /* Classic Church Gold */
+            --accent-yellow: #E6C200;    /* Vibrant Accent Yellow */
+            --burgundy: #6B1D2F;         /* Deep Red / Burgundy */
+            --header-bg: #FFFFFF;
+            --border-color: #E8E2BD;
+            --shadow-color: rgba(107, 29, 47, 0.08);
+            --manager-bg: #FFFFFF;
+        }
+
+        /* Dark Mode Theme Overrides */
+        [data-theme="dark"] {
+            --bg-color: #1A1810;
+            --surface-bg: #262318;
+            --card-bg: #2E2A1E;
+            --text-color: #F8F5E6;
+            --text-muted: #D1C8AD;
+            --primary-gold: #F3E5AB;
+            --accent-yellow: #FFD700;
+            --burgundy: #B83B5E;
+            --header-bg: #221F15;
+            --border-color: #423C2A;
+            --shadow-color: rgba(0, 0, 0, 0.5);
+            --manager-bg: #2E2A1E;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation Bar */
+        header {
+            background-color: var(--header-bg);
+            color: var(--text-color);
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px var(--shadow-color);
+            border-bottom: 3px solid var(--primary-gold);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-cross {
+            font-size: 2rem;
+            color: var(--primary-gold);
+        }
+
+        .logo-text h1 {
+            font-size: 1.2rem;
+            color: var(--burgundy);
+        }
+
+        .logo-text p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            color: var(--burgundy);
+        }
+
+        /* Theme Toggle Button */
+        .theme-toggle-btn {
+            background: var(--surface-bg);
+            border: 2px solid var(--primary-gold);
+            color: var(--text-color);
+            padding: 6px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Hero Banner */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('images.jpg') center/cover no-repeat;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #FFFFFF;
+            padding: 0 20px;
+        }
+
+        .hero-content h2 {
+            font-size: 2.5rem;
+            color: var(--primary-gold);
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Container & Section Titles */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--burgundy);
+            font-size: 2rem;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 3px;
+            background-color: var(--primary-gold);
+            margin: 10px auto 0;
+        }
+
+        /* High Opacity Church Manager Profile Card */
+        .manager-highlight-card {
+            background-color: var(--manager-bg);
+            opacity: 1 !important; /* High opacity */
+            border: 3px solid var(--primary-gold);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 50px;
+            box-shadow: 0 8px 25px var(--shadow-color);
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .manager-highlight-card img {
+            width: 240px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 2px solid var(--primary-gold);
+        }
+
+        .manager-info {
+            flex: 1;
+        }
+
+        .manager-info h3 {
+            color: var(--burgundy);
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+
+        .manager-info h4 {
+            color: var(--primary-gold);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .manager-info p {
+            color: var(--text-color);
+            font-size: 1rem;
+            margin-bottom: 10px;
+            opacity: 1;
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .gallery-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px var(--shadow-color);
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .gallery-card .caption {
+            padding: 18px;
+        }
+
+        .gallery-card h4 {
+            color: var(--burgundy);
+            margin-bottom: 8px;
+        }
+
+        .gallery-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Developer Card */
+        .developer-card {
+            background-color: var(--surface-bg);
+            border: 2px solid var(--primary-gold);
+            border-radius: 12px;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            box-shadow: 0 4px 15px var(--shadow-color);
+        }
+
+        .developer-card img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-gold);
+        }
+
+        .developer-info h3 {
+            color: var(--burgundy);
+            margin-bottom: 8px;
+        }
+
+        .developer-info a {
+            color: var(--burgundy);
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--surface-bg);
+            color: var(--text-color);
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            border-top: 3px solid var(--primary-gold);
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .manager-highlight-card, .developer-card {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation (English Buttons) -->
+    <header>
+        <div class="nav-container">
+            <div class="logo-area">
+                <div class="logo-cross">☦</div>
+                <div class="logo-text">
+                    <h1>Harar Mekane Selassie Cathedral</h1>
+                    <p>ሐረር መካነ ሥላሴ ካቴድራል</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#manager">Church Manager</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#developer">Developer</a></li>
+                    <li>
+                        <!-- Theme Toggle Button -->
+                        <button class="theme-toggle-btn" id="themeToggle">
+                            <span id="themeIcon">🌙</span> <span id="themeText">Dark Mode</span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Harar Mekane Selassie Cathedral</h2>
+            <p>ሐረር መካነ ሥላሴ ካቴድራል — በሐረር ከተማ የሚገኝ ታሪካዊ እና ታላቅ መንፈሳዊ ተቋም</p>
+        </div>
+    </section>
+
+    <div class="container">
+
+        <!-- High-Opacity Manager Profile Section -->
+        <h2 id="manager" class="section-title">Church Manager Profile</h2>
+        <div class="manager-highlight-card">
+            <img src="=aba.jpg" alt="Melake Selam Tibebu Melaku">
+            <div class="manager-info">
+                <h3>መልአከ ሰላም ጥበቡ መላኩ (Melake Selam Tibebu Melaku)</h3>
+                <h4>የሐረር መካነ ሥላሴ ካቴድራል የበላይ አስተዳዳሪ</h4>
+                <p><strong>ትምህርት፦</strong> በአንድ ጊዜ ማለትም ሁለት የትምህርት አይነቶች በመንፈሳዉ ምርግትና በአለማዊ እስከ ዲፕሎማ ድረስ በመማር ሰዉ በእምነቱም በስራዉም አዋቃ መሆን እንደሚቻል ያስመሰከሩ ትልቅ አባት ናቸዉ)።</p>
+                <p><strong>ባህሪ እና ስብዕና፦</strong> እጅግ በጣም ትሑት፣ ብቁ፣ ከፍተኛ ክህሎት ያላቸው፣ ጨዋ፣ አስተዋይ እና በምዕመናን ዘንድ እጅግ የተወደዱ የካቴድራሉ መሪና አባት ናቸው።</p>
+                <p><strong>ሚና፦</strong> ከ 60 በላይ ሰራተኞችን፣ ታላቁን G+5 ሕንፃ እና ከ 1,000 በላይ ተማሪዎችን የሚያስተናግደውን የካቴድራሉን ትምህርት ቤት በበላይነት ይመራሉ የቤተክርስቲያኑ በጀት በወር 1million birr በላይ ነዉ ተብሎ ይገመታል</p>
+            </div>
+        </div>
+
+        <!-- Gallery Section -->
+        <h2 id="gallery" class="section-title">Photo Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-card">
+                <img src="images.jpg" alt="Cathedral Building">
+                <div class="caption">
+                    <h4>የሐረር መካነ ሥላሴ ካቴድራል ሕንፃ</h4>
+                    <p>በሀረር ላይ አንጋፋ እና እጅ ታሪካዊ የሆኑ ቅርሶች የሚገኝበት ከ ground+5 እና በዉስጡ ከ1000በላይ ተማሪዎች የሚተዳደርበት ትልቅ ቤተክርስቲያን ነዉ</p>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <img src="unnamed.webp" alt="School Certificate">
+                <div class="caption">
+                    <h4>የትምህርት ቤቱ ዕውቅና መስከረም</h4>
+                    <p>ትምህርት ቤቱ be ministry result 1ኛ በመዉጣት ዋንጫዉን ሲወስዱ የሚያሳያ ፎቶ ነዉ።</p>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <img src="the student pic.webp" alt="Students">
+                <div class="caption">
+                    <h4>የካቴድራሉ ትምህርት ቤት ተማሪዎች</h4>
+                    <p>በካቴድራሉ ሥር በሚገኘው ትምህርት ቤት የሚማሩ ከ 1,000 በላይ ተማሪዎች።</p>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <img src="555042608_122147941334838121_6680063173809106903_n.jpg" alt="Priests">
+                <div class="caption">
+                    <h4>የካቴድራሉ ካህናት</h4>
+                    <p>የቤተክርስቲያኗን መንፈሳዊ አገልግሎት በቅድስና የሚመሩ የተከበሩ የካቴድራሉ ካህናት።</p>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <img src="1000025365.JPEG" alt="Deacon Students">
+                <div class="caption">
+                    <h4>የዲቁና ተማሪዎችና አገልጋዮች</h4>
+                    <p>በካቴድራሉ ውስጥ በመንፈሳዊ ትምህርት ላይ የሚገኙ የዲቁና ተማሪዎች::</p>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <img src="IMG_2191.JPEG" alt="Deacon">
+                <div class="caption">
+                    <h4>የካቴድራሉ ዲያቆን</h4>
+                    <p>በቅዱስ መሠዊያው ዙሪያ የሚያገለግሉ ዲያቆናት::</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Web Developer Section -->
+        <h2 id="developer" class="section-title">Web Developer</h2>
+        <div class="developer-card">
+            <img src="kine.JPEG" alt="Deacon Kine Tibebu Melaku">
+            <div class="developer-info">
+                <h3>Deacon Kine Tibebu Melaku (ዲያቆን ኪነ ጥበቡ መላኩ)</h3>
+                <p><strong>Phone:</strong> <a href="tel:0978688803">0978688803</a></p>
+                <p><strong>Email:</strong> <a href="mailto:kinetibebu100@gmail.com">kinetibebu100@gmail.com</a></p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Harar Mekane Selassie Cathedral | Developed by Deacon Kine Tibebu Melaku</p>
+    </footer>
+
+    <!-- Light/Dark Mode JavaScript -->
+    <script>
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const themeText = document.getElementById('themeText');
+        const htmlElement = document.documentElement;
+
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            if (currentTheme === 'light') {
+                htmlElement.setAttribute('data-theme', 'dark');
+                themeIcon.textContent = '☀️';
+                themeText.textContent = 'Light Mode';
+            } else {
+                htmlElement.setAttribute('data-theme', 'light');
+                themeIcon.textContent = '🌙';
+                themeText.textContent = 'Dark Mode';
+            }
+        });
+    </script>
+</body>
+</html>
